@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>健康数据科学大作业 - [李锦涛]</title>
+  <style>
+    body { font-family: Arial, "Microsoft YaHei", sans-serif; max-width: 920px; margin: 40px auto; padding: 0 16px; line-height: 1.6; }
+    h1,h2 { margin: 0.6em 0; }
+    .card { border: 1px solid #eee; border-radius: 12px; padding: 16px; margin: 14px 0; }
+    code { background: #f6f8fa; padding: 2px 6px; border-radius: 6px; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .muted { color: #666; }
+    img { max-width: 100%; border: 1px solid #eee; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h1>健康数据科学 Python 大作业</h1>
+  <p class="muted">姓名：[李锦涛] ｜ 课程：[健康数据科学的Python语言] ｜ 日期：[2026年1月15日]</p>
+
+  <div class="card">
+    <h2>项目简介</h2>
+    <p>本项目使用 <code>icu_first24hours.csv</code>（ICU 患者入院前 24 小时相关特征）进行数据清洗、描述统计、可视化，并建立一个简单的预测模型来预测 [你的预测目标：例如死亡/是否xx]。</p>
+  </div>
+
+  <div class="card">
+    <h2>数据来源</h2>
+    <ul>
+      <li>数据集：<code>icu_first24hours.csv</code>（课程提供示例数据）</li>
+      <li>样本量与字段说明：见报告 PDF</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>我做了什么（按评分点）</h2>
+    <ol>
+      <li>数据读取：使用 pandas 读取 CSV，检查缺失值与数据类型</li>
+      <li>数据预处理：处理缺失值/异常值，构造特征并划分训练测试集</li>
+      <li>统计分析：描述统计 + 可视化（分布、对比）</li>
+      <li>预测模型：建立一个基线模型（如 Logistic Regression/RandomForest）</li>
+      <li>评估与可视化：AUC/ACC、混淆矩阵、ROC 曲线（及必要解释）</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>关键结果图</h2>
+    <p class="muted">（把你后面画的图命名为 <code>fig1.png</code> 放到同一目录即可）</p>
+    <img src="fig1.png" alt="result figure" />
+  </div>
+
+  <div class="card">
+    <h2>报告下载</h2>
+    <ul>
+      <li><a href="report.pdf">点击下载课程报告（PDF）</a></li>
+    </ul>
+    <p class="muted">若链接打不开，请确认 <code>report.pdf</code> 与本页面同目录。</p>
+  </div>
+
+  <div class="card">
+    <h2>代码与复现</h2>
+    <p>代码与运行说明见同仓库（README 或 notebooks）。</p>
+  </div>
+</body>
+</html>
