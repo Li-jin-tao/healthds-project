@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>健康数据科学大作业 - [李锦涛]</title>
+  <title>健康数据科学大作业 - 李锦涛</title>
   <style>
     body { font-family: Arial, "Microsoft YaHei", sans-serif; max-width: 920px; margin: 40px auto; padding: 0 16px; line-height: 1.6; }
     h1,h2 { margin: 0.6em 0; }
@@ -12,29 +12,34 @@
     a { color: #0969da; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .muted { color: #666; }
-    img { max-width: 100%; border: 1px solid #eee; border-radius: 10px; }
+    img { max-width: 100%; border: 1px solid #eee; border-radius: 10px; margin: 8px 0; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <h1>健康数据科学 Python 大作业</h1>
-  <p class="muted">姓名：[李锦涛] ｜ 课程：[健康数据科学的Python语言] ｜ 日期：[2026年1月15日]</p>
+  <p class="muted">姓名：李锦涛 ｜ 课程：健康数据科学的Python语言 ｜ 日期：2026年1月15日</p>
 
   <div class="card">
-  <h2>个人简介</h2>
-  <p>
-    我是李锦涛，北京大学医学技术研究院医学影像技术专业本科在读，同时修读北京大学国家发展研究院经济学双学位。
-    研究兴趣聚焦于医学影像与临床数据分析、影像组学与预测建模。
-  </p>
-  <ul>
-    <li><b>科研/数据经验：</b>参与肾细胞癌（RCC）相关研究，整理并构建约200例患者的多源数据库（PET/CT影像参数、临床信息、病理与免疫标志物等），并参与免疫微环境分型与模型相关流程。</li>
-    <li><b>方法与工具：</b>Python（pandas、sklearn）、Matlab、RStudio；熟悉数据清洗、描述统计、可视化与基础机器学习建模流程。</li>
-    <li><b>个人特点：</b>做事踏实细致、责任心强，能够在时间压力下推进任务落地与结果呈现。</li>
-  </ul>
-</div>
+    <h2>个人简介</h2>
+    <p>
+      我是李锦涛，北京大学医学技术研究院医学影像技术专业本科在读，同时修读北京大学国家发展研究院经济学双学位。
+      研究兴趣聚焦于医学影像与临床数据分析、影像组学与预测建模。
+    </p>
+    <ul>
+      <li><b>科研/数据经验：</b>参与肾细胞癌（RCC）相关研究，整理并构建约200例患者的多源数据库（PET/CT影像参数、临床信息、病理与免疫标志物等），并参与免疫微环境分型与模型相关流程。</li>
+      <li><b>方法与工具：</b>Python（pandas、sklearn）、Matlab、RStudio；熟悉数据清洗、描述统计、可视化与基础机器学习建模流程。</li>
+      <li><b>个人特点：</b>做事踏实细致、责任心强，能够在时间压力下推进任务落地与结果呈现。</li>
+    </ul>
+  </div>
 
   <div class="card">
     <h2>项目简介</h2>
-    <p>本项目使用 <code>icu_first24hours.csv</code>（ICU 患者入院前 24 小时相关特征）进行数据清洗、描述统计、可视化，并建立一个简单的预测模型来预测 [你的预测目标：例如死亡/是否xx]。</p>
+    <p>
+      本项目使用 <code>icu_first24hours.csv</code>（ICU 患者入院前 24 小时相关特征）进行数据清洗、描述统计与可视化，
+      并建立基线预测模型预测 <code>HOSPITAL_EXPIRE_FLAG</code>（院内死亡标记）。
+    </p>
   </div>
 
   <div class="card">
@@ -48,31 +53,67 @@
   <div class="card">
     <h2>我做了什么（按评分点）</h2>
     <ol>
-      <li>数据读取：使用 pandas 读取 CSV，检查缺失值与数据类型</li>
-      <li>数据预处理：处理缺失值/异常值，构造特征并划分训练测试集</li>
-      <li>统计分析：描述统计 + 可视化（分布、对比）</li>
-      <li>预测模型：建立一个基线模型（如 Logistic Regression/RandomForest）</li>
-      <li>评估与可视化：AUC/ACC、混淆矩阵、ROC 曲线（及必要解释）</li>
+      <li>数据读取：使用 pandas 读取 CSV，检查数据维度、数据类型与缺失情况。</li>
+      <li>数据预处理：处理缺失值/特征筛选，划分训练测试集（分层抽样）。</li>
+      <li>统计分析：描述统计 + 可视化（目标分布、缺失值概览、分组箱线图）。</li>
+      <li>预测模型：建立基线模型（Balanced Logistic Regression；对照模型 Random Forest）。</li>
+      <li>模型评估与可视化：ACC、ROC-AUC、PR-AUC（AP），并绘制 ROC/PR 曲线。</li>
+      <li>项目展示网页：通过 GitHub Pages 公开展示项目与结果。</li>
     </ol>
   </div>
 
   <div class="card">
     <h2>关键结果图</h2>
-    <p class="muted">（把你后面画的图命名为 <code>fig1.png</code> 放到同一目录即可）</p>
-    <img src="fig1.png" alt="result figure" />
+
+    <p><b>1. 目标变量分布</b></p>
+    <p class="muted">ICU 院内死亡率较低，任务具有明显类别不平衡特征。</p>
+    <img src="figures/fig_target_bar.png" alt="Target distribution" />
+
+    <p><b>2. 缺失值情况概览</b></p>
+    <p class="muted">展示缺失率最高的前若干特征，用于指导后续数据预处理。</p>
+    <img src="figures/fig_missing_top10.png" alt="Missing value overview" />
+
+    <p><b>3. 特征分布对比（箱线图）</b></p>
+    <p class="muted">对比不同结局患者的部分实验室指标分布差异（最大值/最小值）。</p>
+    <div class="grid2">
+      <div>
+        <p class="muted"><i>Max</i></p>
+        <img src="figures/fig_box_chart_1016_max.png" alt="Boxplot max" />
+      </div>
+      <div>
+        <p class="muted"><i>Min</i></p>
+        <img src="figures/fig_box_chart_1016_min.png" alt="Boxplot min" />
+      </div>
+    </div>
+
+    <p><b>4. 模型评估结果（ROC / PR 曲线）</b></p>
+    <p class="muted">使用平衡 Logistic Regression 作为基线模型进行评估与可视化。</p>
+    <div class="grid2">
+      <div>
+        <p class="muted"><i>ROC</i></p>
+        <img src="figures/fig_roc_LogReg_balanced.png" alt="ROC curve (LogReg)" />
+      </div>
+      <div>
+        <p class="muted"><i>PR</i></p>
+        <img src="figures/fig_pr_LogReg_balanced.png" alt="PR curve (LogReg)" />
+      </div>
+    </div>
   </div>
 
   <div class="card">
     <h2>报告下载</h2>
     <ul>
-      <li><a href="report.pdf">点击下载课程报告（PDF）</a></li>
+      <li><a href="report_tex.pdf">点击下载课程报告（LaTeX 导出 PDF）</a></li>
     </ul>
-    <p class="muted">若链接打不开，请确认 <code>report.pdf</code> 与本页面同目录。</p>
+    <p class="muted">若链接打不开，请确认 <code>report_tex.pdf</code> 与本页面位于同一目录（仓库根目录）。</p>
   </div>
 
   <div class="card">
     <h2>代码与复现</h2>
-    <p>代码与运行说明见同仓库（README 或 notebooks）。</p>
+    <p>
+      代码在同一仓库中。运行 <code>python main.py</code> 可生成 <code>figures/</code> 下的图像与 <code>outputs/</code> 下的指标文件，
+      并用于报告与网页展示。
+    </p>
   </div>
 </body>
 </html>
